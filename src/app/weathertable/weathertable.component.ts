@@ -10,6 +10,6 @@ export class WeathertableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
-
 }
