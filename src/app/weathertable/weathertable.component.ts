@@ -12,4 +12,18 @@ export class WeathertableComponent implements OnInit {
   ngOnInit() {
     
   }
+
+  url = 'http://192.168.1.73:8080/demo/all';
+
+  getData = () => {
+    fetch(this.url).then(function(response) {
+      return response.json();
+    }).then(function(data) {
+      console.log(data);
+      return JSON.stringify(data);
+    }).catch(function() {
+      console.log("Booo");
+    });
+  }
+
 }
