@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-weathertable',
@@ -9,31 +7,21 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class WeathertableComponent implements OnInit {
+  test = '';
 
-  constructor(private http: HttpClient) { }
-
-  getHeroes (): Observable<Object> {
-    return this.http.get(this.url)
-  }
+  constructor() { }
 
   ngOnInit() {
-    this.getData();
-  }
-
-  model = 'hello';
-  url = 'http://192.168.1.73:8080/demo/all';
-
-  getData = () => {
-    fetch(this.url).then(function(response) {
-      return response.json();
-    }).then(function(data) {
-      console.log(data);
-      this.model = JSON.stringify(data);
-      return JSON.stringify(data);
-    }).catch((error) => {
-      console.log(error);
-      console.log("Booo");
+    this.getData().then((response) => {
+      console.log(response);
+      this.test = JSON.stringify(response.type);
     });
   }
+  
+  // url = 'http://192.168.1.73:8080/demo/all';
+  url = 'https://jsonplaceholder.typicode.com/posts';
 
+  getData() {
+    return fetch(this.url);
+  }
 }
