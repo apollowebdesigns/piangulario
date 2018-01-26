@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherdataService} from '../weatherdata/weatherdata.service';
 
 @Component({
   selector: 'app-weathertable',
@@ -9,19 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class WeathertableComponent implements OnInit {
   test = '';
 
-  constructor() { }
+  constructor(private weatherDataService:WeatherdataService) { }
 
   ngOnInit() {
-    this.getData().then((response) => {
+    console.log('getting some info from the service');
+
+    this.weatherDataService.getData().then((response) => {
       console.log(response);
       this.test = JSON.stringify(response.type);
     });
-  }
-  
-  // url = 'http://192.168.1.73:8080/demo/all';
-  url = 'https://jsonplaceholder.typicode.com/posts';
-
-  getData() {
-    return fetch(this.url);
   }
 }
