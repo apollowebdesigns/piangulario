@@ -17,7 +17,7 @@ export class WeathertableComponent implements OnInit {
 
     this.weatherDataService.getData().subscribe((response) => {
       console.log(response);
-      this.test = JSON.stringify(response.type);
+      this.test = JSON.stringify(response['_body']);
     });
   }
 }
