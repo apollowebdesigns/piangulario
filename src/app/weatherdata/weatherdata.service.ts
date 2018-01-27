@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map'
 
 @Injectable()
 export class WeatherdataService {
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   // url = 'http://192.168.1.73:8080/demo/all';
   url = 'http://localhost:8000/stub.json';
@@ -12,7 +14,7 @@ export class WeatherdataService {
    * returns a promise
    */
   getData() {
-    return fetch(this.url);
+    return this.http.get(this.url);
   }
 
 }

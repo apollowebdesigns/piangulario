@@ -15,7 +15,7 @@ export class WeathertableComponent implements OnInit {
   ngOnInit() {
     console.log('getting some info from the service');
 
-    this.weatherDataService.getData().then((response) => {
+    this.weatherDataService.getData().subscribe((response) => {
       console.log(response);
       this.test = JSON.stringify(response.type);
     });
