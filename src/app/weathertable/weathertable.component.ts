@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherdataService} from '../weatherdata/weatherdata.service';
+import { WeatherdataService } from '../weatherdata/weatherdata.service';
 
 @Component({
   selector: 'app-weathertable',
@@ -16,8 +16,7 @@ export class WeathertableComponent implements OnInit {
     console.log('getting some info from the service');
 
     this.weatherDataService.getData().subscribe((response) => {
-      console.log(response);
-      this.test = JSON.stringify(response['_body']);
+      this.test = JSON.stringify(response);
     });
   }
 }
