@@ -1,3 +1,2 @@
-cd ~
-cd piangulario
-ng serve
+cd /home/pi/piangulario/
+npm start
