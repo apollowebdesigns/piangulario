@@ -29,3 +29,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Postgresql Database
 
 <code>sudo -u postgres -i</code>
+
+
+## npm stub server
+
+This stubs out the code and allows for development without a live server
+
+<code>npm install http-server -g</code>
