@@ -7,10 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeathertableComponent } from './weathertable/weathertable.component';
 import { WeatherdataService } from './weatherdata/weatherdata.service';
-import { PimessageComponent } from './pimessage/pimessage.component';
 
 const appRoutes: Routes = [
-  { path: 'pimessage', component: PimessageComponent },
   { path: 'weathertable', component: WeathertableComponent },
   { path: '',
     redirectTo: '/',
@@ -22,8 +20,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    WeathertableComponent,
-    PimessageComponent
+    WeathertableComponent
   ],
   imports: [
     RouterModule.forRoot(
