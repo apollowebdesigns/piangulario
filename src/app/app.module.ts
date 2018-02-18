@@ -7,9 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeathertableComponent } from './weathertable/weathertable.component';
 import { WeatherdataService } from './weatherdata/weatherdata.service';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   { path: 'weathertable', component: WeathertableComponent },
+  { path: 'home', component: HomeComponent },
   { path: '',
     redirectTo: '/',
     pathMatch: 'full'
@@ -20,7 +22,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    WeathertableComponent
+    WeathertableComponent,
+    HomeComponent
   ],
   imports: [
     RouterModule.forRoot(
