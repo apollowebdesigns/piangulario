@@ -1,4 +1,20 @@
-<p>
-  weathertable works! 
-  {{test}}
-</p>
+<h1>What is the weather doing???</h1>
+
+<table>
+  <thead>
+      <tr>
+        <th>Date</th>
+        <th>Pressure</th>
+        <th>Temperature</th>
+        <th>Humidity</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let weatherProperty of weatherData">
+      <td>{{weatherProperty.date}}</td>
+      <td>{{weatherProperty.pressure}}</td>
+      <td>{{weatherProperty.temperature}}</td>
+      <td>{{weatherProperty.humidity}}</td>
+    </tr>
+  </tbody>
+</table>

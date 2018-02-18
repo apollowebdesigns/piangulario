@@ -9,6 +9,7 @@ import { WeatherdataService } from '../weatherdata/weatherdata.service';
 
 export class WeathertableComponent implements OnInit {
   test = '';
+  weatherData;
 
   constructor(private weatherDataService:WeatherdataService) { }
 
@@ -17,6 +18,7 @@ export class WeathertableComponent implements OnInit {
 
     this.weatherDataService.getData().subscribe((response) => {
       this.test = JSON.stringify(response);
+      this.weatherData = response;
     });
   }
 }
