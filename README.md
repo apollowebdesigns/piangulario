@@ -36,3 +36,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 This stubs out the code and allows for development without a live server
 
 <code>npm install http-server -g</code>
+
+## Using docker on Raspberry Pi
+
+Angular using ng serve doesn't run that well on the pi, so I am using an image with docker to mock an environment Angular will play nice with.
